@@ -9,7 +9,7 @@ import {
   faHeart as faFilledHeart,
   faDownload 
 } from "@fortawesome/free-solid-svg-icons";
-import { faStar, faHeart } from "@fortawesome/free-regular-svg-icons";
+import {  faHeart } from "@fortawesome/free-regular-svg-icons";
 import { toast } from "react-toastify";
 
 interface Photo {
@@ -73,7 +73,7 @@ const ShowGallery = () => {
     }
   };
   const handleFavorite = async (photoFile: string) => {
-    const response = await axios.post("/FavPhoto/FavouritePhoto", {
+     await axios.post("/FavPhoto/FavouritePhoto", {
       photoFile,
     });
     await fetchFavourites()

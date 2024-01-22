@@ -1,6 +1,6 @@
 import axios from "../../config/axiosinstance";
 import { formDataProps, setStateType } from "../../interfaces";
-import { notify, errorToast } from "../../utils";
+import { notify } from "../../utils";
 
 export type SubmitProps = {
   formData: formDataProps;

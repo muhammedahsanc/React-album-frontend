@@ -77,7 +77,7 @@ console.log(photos,"pphoooooyos");
     }
   };
   const handleFavorite = async (photoFile: string) => {
-    const response = await axios.post("/FavPhoto/FavouritePhoto", {
+     await axios.post("/FavPhoto/FavouritePhoto", {
       photoFile,
     });
     await fetchFavourites()

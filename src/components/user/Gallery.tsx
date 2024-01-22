@@ -1,6 +1,6 @@
-import React, { useCallback, useState,ChangeEvent  } from 'react';
+import React, { useCallback, useState  } from 'react';
 import axios from "../../config/axiosinstance";
-import { useDropzone, DropzoneRootProps, DropzoneInputProps } from 'react-dropzone';
+import { useDropzone,  DropzoneInputProps } from 'react-dropzone';
 import styled from 'styled-components';
 import { notify } from '../../utils';
 import { useNavigate, useParams } from 'react-router-dom';

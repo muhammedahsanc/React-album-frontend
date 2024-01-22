@@ -2,11 +2,8 @@ import { useState, useEffect } from 'react';
 import axios from '../../config/axiosinstance';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import {
-  faTrash,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { toast } from 'react-toastify';
+
+// import { toast } from 'react-toastify';
 
 interface Photo {
   _id: string;
@@ -36,21 +33,21 @@ const ShowAlbums = () => {
   const AlbumClick = (id:any) => {
     navigate(`../showGallery/${id}`);
   };
-  const handleDelete = async (AlbumId: string) => {
-    try {
-      const shouldDelete = window.confirm("Are you sure you want to delete this photo?");
-      if (!shouldDelete) {
-        return;
-      }
-      const response = await axios.post("/deleteAlbum/removeAlbum",AlbumId );
-      toast(response.data.message);
+  // const handleDelete = async (AlbumId: string) => {
+  //   try {
+  //     const shouldDelete = window.confirm("Are you sure you want to delete this photo?");
+  //     if (!shouldDelete) {
+  //       return;
+  //     }
+  //     const response = await axios.post("/deleteAlbum/removeAlbum",AlbumId );
+  //     toast(response.data.message);
 
-    }catch(err){
-      console.error("Error deleting photo:", err);
-      console.log(err);
+  //   }catch(err){
+  //     console.error("Error deleting photo:", err);
+  //     console.log(err);
       
-    }
-  }
+  //   }
+  // }
   return (
     <div>
     <TopRightButton onClick={handleButtonClick}>Add New Album</TopRightButton>
