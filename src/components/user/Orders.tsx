@@ -63,7 +63,7 @@ export default function Orders() {
   return (
     <React.Fragment>
       <Title>Recent photos</Title>
-      <Table size="small">
+      {/* <Table size="small">
         <TableHead>
           <TableRow>
             <TableCell>Date</TableCell>
@@ -84,7 +84,7 @@ export default function Orders() {
             </TableRow>
           ))}
         </TableBody>
-      </Table>
+      </Table> */}
       <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
         See more orders
       </Link>

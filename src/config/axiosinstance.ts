@@ -23,4 +23,4 @@ instance.interceptors.response.use(
 export default instance;
 
 // instance.defaults.headers.common["Authorization"]=Cookies.get("token");
-// baseURL: "https://mygallery-backend.onrender.com/",
+// baseURL: "",
