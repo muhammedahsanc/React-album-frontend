@@ -1,8 +1,26 @@
-import Cookies from 'js-cookie';
-import axios from "axios";
-const instance = axios.create({
-baseURL: "https://mygallery-backend.onrender.com/",
-});
-instance.defaults.headers.common["Authorization"] =Cookies.get("token");
+import Cookies from "js-cookie";
+import instance from "./axios";
+
+instance.interceptors.request.use(
+  (config) => {
+    const accessToken = JSON.parse(Cookies.get("token")?? JSON.stringify(""));
+    if (config.headers) config.headers.Authorization = accessToken!;
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+instance.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
 export default instance;
-// baseURL: "https://gallery-backend-edl1.onrender.com"
+
+// instance.defaults.headers.common["Authorization"]=Cookies.get("token");
+// baseURL: "https://mygallery-backend.onrender.com/",
